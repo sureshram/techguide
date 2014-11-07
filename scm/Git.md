@@ -23,3 +23,13 @@ newproject>git add .
 
 newproject>git commmit -m 'New Project Setup - README.txt'
 
+### Display Remote Repositories
+http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
+
+git remote -v
+git add remote techguide git@github.com:sureshram/techguide.git
+
+
+### Push changes to remote repo
+
+git push techguide master
