@@ -23,3 +23,5 @@ newproject>git add .
 
 newproject>git commmit -m 'New Project Setup - README.txt'
 
+###  Change remote url to different remote
+git remote set-url origin newurl
