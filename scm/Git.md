@@ -33,3 +33,6 @@ git add remote techguide git@github.com:sureshram/techguide.git
 ### Push changes to remote repo
 
 git push techguide master
+
+###  Change remote url to different remote
+git remote set-url origin newurl
