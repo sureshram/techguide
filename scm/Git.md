@@ -27,6 +27,7 @@ newproject>git commmit -m 'New Project Setup - README.txt'
 http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
 
 git remote -v
+
 git add remote techguide git@github.com:sureshram/techguide.git
 
 
@@ -36,3 +37,9 @@ git push techguide master
 
 ###  Change remote url to different remote
 git remote set-url origin newurl
+
+
+### Pull request
+
+git reguest-pull [remote-repo-name-like-origin] https://github.com/sureshram/Project.git [branch-name-like-master]
+
