@@ -10,3 +10,7 @@ mkdir ${DEST}
 sudo rsync -aXS --exclude='/*/.gvfs' /home/. ${DEST}
 sudo diff -r /home ${DEST}
 cd / && sudo mv /home /old_home && sudo ln -s ${DEST} /home
+
+# Delete old directory
+# cd /
+# sudo rm -r /old_home
