@@ -41,7 +41,12 @@ http://www.confusedcoders.com/random/how-to-install-g-compiler-for-cc-on-ubuntu-
 - sudo apt-get install build-essential
 - untar and go to the directory
 - ./configure
-
+- sudo make
+- sudo make check
+- sudo make install
+- - sudo ldconfig
+- protoc --version #This should display the protocol buf version
+- 
 ### cmake 2.6 or newer
 http://www.cmake.org/files/v3.0/cmake-3.0.2-Linux-i386.tar.gz
 http://www.cmake.org/download/
@@ -74,17 +79,5 @@ http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/rel
 - Download Code
 git clone git://git.apache.org/hadoop.git
 
-
-#### Moving Home Directory (Move to Linux Guide)
-sudo rsync -aXS --exclude='/*/.gvfs' /home/. /mnt/hadoop/myhome
-sudo diff -r /home /mnt/hadoop/myhome
-cd / && sudo mv /home /old_home && ln -s /mnt/hadoop/myhome /home
-
-Delete old home directory
-
-cd /
-sudo rm -r /old_home
-
-note:The --exclude='/*/.gvfs' prevents rsync from complaining about not being 
-able to copy .gvfs, but I believe it is optional. Even if rsync complains, 
-it will copy everything else anyway
+- Build the code
+mvn package -Pdist -DskipTests -Dtar
