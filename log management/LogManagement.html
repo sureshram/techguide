@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LogManagement</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p><html><head><title>Log Management</title></head><body bgcolor="#C0DCC0"><dl><dt style="font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Log Management<dt><br><dt style="margin-left:32;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt"></p><p><b></font><font face="Arial" style="font-size:14pt">##        References</p><p></p><p></p><p></font><font face="Arial" style="font-size:12pt">Lumberjack (low latency, low memory alternative to logstash) -&gt;  <A HREF="https://github.com/elasticsearch/logstash-forwarder">https://github.com/elasticsearch/logstash-forwarder</A></p><p>Analytic (stream processing language) <A HREF="http://riemann.io/">http://riemann.io/</A> -&gt;  <A HREF="https://github.com/exoscale/riemann-grid">https://github.com/exoscale/riemann-grid</A></p><p></p><p>Example: </p><p><A HREF="http://www.knowceantech.com/2013/12/log-aggregationanalytics-with-logstash-elasticsearch/">http://www.knowceantech.com/2013/12/log-aggregationanalytics-with-logstash-elasticsearch/</A></p><p></p><p></b><A HREF="https://www.youtube.com/watch?v=QthqK5iC_EA">https://www.youtube.com/watch?v=QthqK5iC<em>EA</A></p><p><b></p><p>Plugins - </b><A HREF="https://github.com/lusis/chef-logstash">https://github.com/lusis/chef-logstash</A><b></p><p>ES Plugin -</b>  <A HREF="https://github.com/elasticsearch/curator/wiki/Examples">https://github.com/elasticsearch/curator/wiki/Examples</A><b></font><font face="Arial" style="font-size:14pt"></p><p>Kibana - <A HREF="http://matthiasnehlsen.com/blog/2013/07/09/transforming-logs-into-information/">http://matthiasnehlsen.com/blog/2013/07/09/transforming-logs-into-information/</A></p><p>Kibana filters - <A HREF="http://www.elasticsearch.org/guide/en/kibana/current/working-with-queries-and-filters.html">http://www.elasticsearch.org/guide/en/kibana/current/working-with-queries-and-filters.html</A></p><p></p></b></font><dt><br><dt style="margin-left:18;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">graylog<dt><br><dt style="margin-left:50;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">## Graylog  Server</p><p></p><p></p><p>### Startup</p><p></p><p>bin/graylog2ctl start</p><p></p><p>###  Logs</p><p></p><p>###REST Interface</p><p></p><p><A HREF="http://127.0.0.1:12900">http://127.0.0.1:12900</A></p><p></p><p>### Web Interface</p><p></p><p><A HREF="http://127.0.0.1:9000">http://127.0.0.1:9000</A></p><p></p><p>Log in to the web interface (username admin and the password (graylog) you configured at root</em>password<em>sha2 in the graylog2.conf of your graylog2-server) and navigate to System -&gt; Nodes. Select your graylog2-server node there and click on Manage inputs</p><p></p><p></p><p></p><p>## Graylog Web </p><p></p><p>#### Starting Web Server from Backend</p><p></p><p>nohup bin/graylog2-web-interface &amp;</p><p></p><p>#### Version  Compatibility</p></font><dt><br><dt style="margin-left:18;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">logstash<dt><br><dt style="margin-left:50;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">Created from MarkdownPAD</p><p></p><p># Logstash Gotchas</p><p></p><p>- Throttle Using throttle filter</p><p>- type should match across input and output</p><p>- use json<em>lines for tcp as tcp input does not know the end of the log event</p><p>- logstash does not process file if it has processed once</p><p>- Remove .sincedb...xxx file from home directory (Windows : C:/users/username/.sincedbxxxx)</p><p></p><p># Architecture</p><p></p><p>- Life of an event - <A HREF="http://logstash.net/docs/1.4.2/life-of-an-event">http://logstash.net/docs/1.4.2/life-of-an-event</A></p><p></p><p></p><p># Integration with Elasticsearch</p><p></p><p>- Elasticsearch index can be named using the field syntax </p><p></p><p></p><p></p><p></p><p></p></font><dt><br><dt style="margin-left:36;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">grok<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">### Example 1</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></font><dt><br><dt style="margin-left:54;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Field Extraction<dt><br><dt style="margin-left:86;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">### Msg to Parse: </p><p>07/28/14 07:25:05 CDT DEBUG: [3d7887d1-9d89-4575-b2d2-4a127a2fe7dc:PdfConverter] adfasdf</p><p></p><p>### Grok:</p><p>(?&lt;timestamp&gt;%{DATE</em>US} %{TIME} %{TZ})</p><p></p><p>### Result</p><p></p><p>{</p><p>  &quot;timestamp&quot;: [</p><p>    [</p><p>      &quot;07/28/14 07:25:05 CDT&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;DATE</em>US&quot;: [</p><p>    [</p><p>      &quot;07/28/14&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;MONTHNUM&quot;: [</p><p>    [</p><p>      &quot;07&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;MONTHDAY&quot;: [</p><p>    [</p><p>      &quot;28&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;YEAR&quot;: [</p><p>    [</p><p>      &quot;14&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;TIME&quot;: [</p><p>    [</p><p>      &quot;07:25:05&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;HOUR&quot;: [</p><p>    [</p><p>      &quot;07&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;MINUTE&quot;: [</p><p>    [</p><p>      &quot;25&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;SECOND&quot;: [</p><p>    [</p><p>      &quot;05&quot;</p><p>    ]</p><p>  ],</p><p>  &quot;TZ&quot;: [</p><p>    [</p><p>      &quot;CDT&quot;</p><p>    ]</p><p>  ]</p><p>}</p><p></p></font><dt><br><dt style="margin-left:36;font: normal normal normal 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Plugins<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><dt><br><dt style="margin-left:36;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">WorkingConfig<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">input {</p><p>	file {</p><p>        type =&gt; &quot;apache<em>access&quot;</p><p>		add</em>field =&gt; { &quot;environment&quot; =&gt; &quot;uat&quot; }</p><p>		path =&gt; &quot;D:/WellPoint/SYSTEMi/Apache/logs/access<em>.log&quot;</p><p>		start<em>position =&gt; end</p><p>		sincedb</em>path =&gt; &quot;E:/Software/logstash-1.4.2/bin/sincedb<em>apache<em>access&quot;</p><p>		stat</em>interval =&gt; 5</p><p>	}</p><p>	file {</p><p>        type =&gt; &quot;apache</em>access&quot;</p><p>		add<em>field =&gt; { &quot;environment&quot; =&gt; &quot;prod&quot; }</p><p>		path =&gt; &quot;E:/PROD</em>LOGS/access</em>.log&quot;</p><p>		start<em>position =&gt; beginning</p><p>		sincedb</em>path =&gt; &quot;E:/PROD<em>LOGS/sincedb<em>apache</em>access</em>prod&quot;</p><p>		stat<em>interval =&gt; 5</p><p>	}</p><p>	file {</p><p>        	type =&gt; &quot;systemi</em>client&quot;</p><p>			add<em>field =&gt; { &quot;environment&quot; =&gt; &quot;uat&quot; }</p><p>			path =&gt; &quot;D:/WellPoint/SYSTEMi/Systemi/log/client<em>.log&quot;</p><p>			start<em>position =&gt; end</p><p>			sincedb<em>path =&gt; &quot;E:/Software/logstash-1.4.2/bin/sincedb</em>mssystemi&quot;</p><p>			stat</em>interval =&gt; 5</p><p>			codec =&gt; multiline {</p><p>					pattern =&gt; &quot;^\s&quot;</p><p>					what =&gt; &quot;previous&quot;</p><p>			}</p><p>	}</p><p>	file {</p><p>        	type =&gt; &quot;systemi<em>client&quot;</p><p>			add</em>field =&gt; { &quot;environment&quot; =&gt; &quot;prod&quot; }</p><p>			path =&gt; &quot;E:/PROD<em>LOGS/client</em>.log&quot;</p><p>			start<em>position =&gt; end</p><p>			sincedb</em>path =&gt; &quot;E:/PROD<em>LOGS/sincedb<em>systemi</em>client&quot;</p><p>			stat</em>interval =&gt; 5</p><p>			codec =&gt; multiline {</p><p>					pattern =&gt; &quot;^\s&quot;</p><p>					what =&gt; &quot;previous&quot;</p><p>			}</p><p>	}</p><p>}</p><p></p><p>filter {</p><p></p><p>  throttle {</p><p>	key =&gt; &quot;%{host}%{message}&quot;</p><p>	period =&gt; 1 </p><p>	before<em>count =&gt; -1 </p><p>	after</em>count =&gt; 1</p><p>  }</p><p></p><p>   mutate { </p><p>	add</em>field =&gt; { &quot;customer&quot; =&gt; &quot;wellpoint&quot; }</p><p>	add<em>field =&gt; { &quot;platform</em>version&quot; =&gt; &quot;6.0 SP3&quot; }</p><p>   }</p><p></p><p>   if [type] == &quot;apache<em>access&quot; {</p><p>		grok {</p><p>			match =&gt; [ &quot;message&quot;, &quot;%{IPORHOST:clientip} %{USER:ident} %{USER:auth} [%{HTTPDATE:timestamp:date}] \&quot;(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\&quot; %{NUMBER:response:int} (?:%{NUMBER:bytes:int}|-) %{QS:referrer} %{QS:agent} (?:%{NUMBER:latency:float})&quot;]</p><p>		}</p><p>		grok {</p><p>			match =&gt; [ &quot;message&quot;, &quot;%{COMMONAPACHELOG}&quot;]</p><p>		}</p><p>		date {</p><p>			match =&gt; [&quot;timestamp&quot;, &quot;dd/MMM/yyyy:HH:mm:ss Z&quot;]</p><p>		}</p><p>		mutate { </p><p>			convert =&gt; [&quot;bytes&quot;, &quot;integer&quot;]</p><p>			convert =&gt; [&quot;response&quot;, &quot;integer&quot;]</p><p>	   }</p><p>	   geoip {</p><p>		source =&gt; &quot;clientip&quot;</p><p>		target =&gt; &quot;geoip&quot;</p><p>		add<em>field =&gt; [&quot;[geoip][coordinates]&quot;,&quot;%{[geoip][longitude]}&quot;]</p><p>		add</em>field =&gt; [&quot;[geoip][coordinates]&quot;,&quot;%{[geoip][latitude]}&quot;]</p><p>	   }</p><p>	   mutate {</p><p>		convert =&gt; [ &quot;[geoip][coordinates]&quot;, &quot;float&quot; ]</p><p>		}</p><p>   } else if [type] == &quot;apache</em>ssl<em>request&quot; {</p><p>		grok {</p><p>			match =&gt; [ &quot;message&quot;, &quot;[%{HTTPDATE:timestamp}] %{IPORHOST:clientip} - %{GREEDYDATA:a2</em>ssl</em>protocol} %{GREEDYDATA:a2<em>ssl</em>cipher} \&quot;(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\&quot; %{NUMBER:response:int} (?:%{NUMBER:bytes:int}|-) (?:%{NUMBER:latency:float})&quot;]	 </p><p>		}		</p><p>		date {</p><p>			match =&gt; [&quot;timestamp&quot;, &quot;dd/MMM/yyyy:HH:mm:ss Z&quot;]</p><p>		}</p><p>		mutate { </p><p>			convert =&gt; [&quot;bytes&quot;, &quot;integer&quot;]</p><p>			convert =&gt; [&quot;response&quot;, &quot;integer&quot;]</p><p>	   }</p><p>	   geoip {</p><p>		source =&gt; &quot;clientip&quot;</p><p>	  }</p><p>   } else if [type] == &quot;systemi<em>client&quot; {</p><p>	   grok {</p><p>			match =&gt; [ &quot;message&quot;, &quot;(?&lt;timestamp&gt;%{DATE<em>US} %{TIME} %{TZ}) %{LOGLEVEL:loglevel} %{GREEDYDATA:logmessage}&quot;]</p><p>	   }</p><p>	    date {</p><p>			locale =&gt; &quot;en&quot;</p><p>			match =&gt; [&quot;timestamp&quot;, &quot;MM/dd/yy HH:mm:ss.SSS z&quot;]</p><p>	  }</p><p>   }</p><p>}</p><p></p><p>output {</p><p>	   tcp {</p><p>                type =&gt; &quot;systemi</em>client&quot;</p><p>				codec =&gt; json</em>lines</p><p>                mode =&gt; &quot;client&quot;</p><p>				host =&gt; &quot;10.0.100.125&quot;</p><p>				port =&gt; &quot;5500&quot;</p><p>	  }</p><p>	  tcp {</p><p>                type =&gt; &quot;apache<em>access&quot;</p><p>				codec =&gt; json</em>lines</p><p>                mode =&gt; &quot;client&quot;</p><p>				host =&gt; &quot;10.0.100.125&quot;</p><p>				port =&gt; &quot;5500&quot;</p><p>	  }</p><p>}</p></font><dt><br><dt style="margin-left:18;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Elasticsearch<dt><br><dt style="margin-left:50;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">### Import PGP file</p><p></p><p>rpm --import <A HREF="http://packages.elasticsearch.org/GPG-KEY-elasticsearch">http://packages.elasticsearch.org/GPG-KEY-elasticsearch</A></p><p></p><p></p><p>### create a yum repository file /etc/yum.repos.d/elasticsearch.repo</p><p></p><p>[elasticsearch-1.1]</p><p>name=Elasticsearch repository for 1.1.x packages</p><p>baseurl=http://packages.elasticsearch.org/elasticsearch/1.1/centos</p><p>gpgcheck=1</p><p>gpgkey=http://packages.elasticsearch.org/GPG-KEY-elasticsearch</p><p>enabled=1</p><p></p><p></p><p>### Install Elastic Search</p><p></p><p>yum install elasticsearch</p><p></p><p></p><p>### Start Service</p><p></p><p>service elasticsearch start</p><p></p><p></p><p>### Stop Service</p><p></p><p>service elasticsearch stop</p><p></p><p>### Status</p><p></p><p>service elasticsearch status</p><p></p><p>### Service Port</p><p></p><p># * <code>protocol =&amp;gt; http</code> - port 9200</p><p># * <code>protocol =&amp;gt; transport</code> - port 9300-9305</p><p># * <code>protocol =&amp;gt; node</code> - port 9300-9305</p><p></p><p>####  Useful plugin</p><p>Cluster Viwer -&gt; <A HREF="https://github.com/mobz/elasticsearch-head">https://github.com/mobz/elasticsearch-head</A></p><p></p><p></p><p></p><p></p></font><dt><br><dt style="margin-left:36;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">HTTP Interfaces<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">### Node Info API</p><p></p><p>curl localhost:9200/<em>nodes/process?pretty</p><p></p><p>### Shards, Indices</p><p></p><p><A HREF="http://localhost:9200/_stats">http://localhost:9200/<em>stats</A></p><p></p><p><A HREF="http://localhost:9200/_aliases">http://localhost:9200/</em>aliases</A></p><p><A HREF="http://localhost:9200/_status">http://localhost:9200/<em>status</A></p><p></p><p>### Other Admin Info</p><p></p><p>/<em>stats</p><p>/</em>stats/{metric}</p><p>/</em>stats/{metric}/{indexMetric}</p><p>/{index}/<em>stats</p><p>/{index}/</em>stats/{metric}</p><p></p><p>indices, docs, store, indexing, search, get, merge, </p><p>refresh, flush, warmer, filter</em>cache, id<em>cache, </p><p>percolate, segments, fielddata, completion</p></font><dt><br><dt style="margin-left:36;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Directories<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt"></p><p></p><p>/var/log/elasticsearch</p><p></p><p>/var/data/elasticsearch</p><p></p><p></p></font><dt><br><dt style="margin-left:36;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Non HTTP<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">### Port</p><p></p><p>The default ElasticSearch communication port is 9300</p><p></p></font><dt><br><dt style="margin-left:36;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Tuning<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt"><A HREF="http://edgeofsanity.net/article/2012/12/26/elasticsearch-for-logging.html">http://edgeofsanity.net/article/2012/12/26/elasticsearch-for-logging.html</A></p><p><A HREF="https://github.com/tavisto/elasticsearch-rpms">https://github.com/tavisto/elasticsearch-rpms</A></p><p></p><p>You should run ElasticSearch as an unprivileged user. My cluster runs as the 'elasticsearch' user, so we tweak the kernel limits on processes and memory in '/etc/security/limits.conf':</p><p></p><p>Cluster Health</p><p></p><p>curl localhost:9200/</em>cluster/health?pretty</p><p></p><p></p><p>Cluster shutdown</p><p></p><p>curl localhost:9200/<em>cluster/health?pretty</p><p></p><p></p><p>Settings</p><p></p><p>curl -XPUT <A HREF="http://localhost:9200/blog/">http://localhost:9200/blog/</A> -d '{&quot;settings&quot; : {</p><p>        &quot;number<em>of</em>shards&quot; : 1,</p><p>        &quot;number</em>of<em>replicas&quot; : 2</p><p>    }</p><p>}'</p></font><dt><br><dt style="margin-left:36;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Index<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">### Store</p><p></p><p> curl -XPUT 'http://localhost:9200/test/user/suresh/' -d '{ &quot;name&quot; : &quot;Suresh&quot; }'</p><p> </p><p>curl -XPUT 'http://localhost:9200/demo/post/2' -d '</p><p>{</p><p>    &quot;user&quot;: &quot;johny&quot;,</p><p>    &quot;postDate&quot;: &quot;06-06-2013&quot;,</p><p>    &quot;body&quot;: &quot;This is Demo Post 2 in ElasticSearch&quot; ,</p><p>    &quot;title&quot;: &quot;Demo Post 2&quot;</p><p>}'</p><p></p><p>### Retrieve</p><p></p><p>curl -XGET 'http://localhost:9200/test/user/suresh?pretty=true'</p><p>curl -XGET 'http://localhost:9200/demo/post/2?pretty=true'</p><p></p><p></p><p>####  Delete Index</p><p></p><p>curl -XDELETE <A HREF="http://localhost:9200/posts">http://localhost:9200/posts</A></p><p></p><p>Response</p><p></p><p>{&quot;acknowledged&quot;:true}</p></font><dt><br><dt style="margin-left:36;font: normal normal normal 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Plugins<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><dt><br><dt style="margin-left:18;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Concepts<dt><br><dt style="margin-left:50;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">capture errors and logs into the database</p><p>log learning system</p></font><dt><br><dt style="margin-left:18;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Splunk<dt><br><dt style="margin-left:50;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">Online Sandbox</p><p>Starts: October 13, 2014</p><p>Ends: October 28, 2014</p><p></p><p><A HREF="https://prd-p-lxdsr65mv79w.splunk6.splunktrial.com/">https://prd-p-lxdsr65mv79w.splunk6.splunktrial.com/</A></p><p></p><p><A HREF="http://docs.splunk.com/Documentation/Splunk/6.1.4/installation/RunSplunkasadifferentornon-rootuser">http://docs.splunk.com/Documentation/Splunk/6.1.4/installation/RunSplunkasadifferentornon-rootuser</A></p><p></p><p></p><p>DockerUbuntu VM - admin/suresh</p><p>sudo -H -u splunk $SPLUNK</em>HOME/bin/splunk start</p></font><dt><br><dt style="margin-left:18;font: normal normal bold 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">Tools<dt><br><dt style="margin-left:50;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><p><font face="Arial" style="font-size:10pt">Central Log Management Tools</p><p></p><li><p>IBM Security</p><li><p>HP ArcSight</p><li><p>Splunk</p><li><p>McAfee</p><li><p>LogRhythm</p><li><p>Tibco LogLogic </p></font><dt><br><dt style="margin-left:36;font: normal normal normal 8pt normal ;font-family:Verdana; text-decoration: none;color: #000000;"><img src="aodot0.gif"><img src="aoicon0.gif">New action...<dt><br><dt style="margin-left:68;font: normal normal normal 10pt normal ;font-family:Arial; text-decoration: none;color: #000000;"><dt><br></dl></body></html></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -2,6 +2,8 @@
 
 http://www.howtogeek.com/177621/the-beginners-guide-to-iptables-the-linux-firewall/
 
+iptables -L -v
+
 Accept connections
 
 iptables --policy INPUT ACCEPT

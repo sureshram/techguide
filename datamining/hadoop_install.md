@@ -1,0 +1,90 @@
+### Install Ubuntu [Ubuntu 14.04]
+	* Create large disk storage for ubuntu 20GB
+
+###  Install Java 7
+http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
+
+
+The method I followed
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+
+
+#### Install Maven 3
+http://stackoverflow.com/questions/15630055/how-to-install-maven-3-on-ubuntu-14-04-lts-13-10-13-04-12-10-12-04-by-using-apt
+
+sudo apt-get update
+sudo apt-get install maven
+
+Increase the memory for compile
+export MAVEN_OPTS="-Xms256m -Xmx512m"
+
+Moven Maven directory to another folder
+(If unzipped)
+echo "export M2_HOME=/mnt/hadoop/maven" >> ~/.bash_profile
+source ~/.bash_profile
+(If package apt-get is used)
+ sudo vi /etc/maven/m2.conf
+change the m2.home
+
+#### Protobuf 2.6 
+https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.gz
+
+- Download
+wget https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.gz
+
+- Install
+http://www.confusedcoders.com/random/how-to-install-g-compiler-for-cc-on-ubuntu-13-04
+- Install g++
+- sudo apt-get install build-essential
+- untar and go to the directory
+- ./configure
+
+### cmake 2.6 or newer
+http://www.cmake.org/files/v3.0/cmake-3.0.2-Linux-i386.tar.gz
+http://www.cmake.org/download/
+
+wget http://www.cmake.org/files/v3.0/cmake-3.0.2-Linux-i386.tar.gz
+
+ - tar -xvf cmake-3.0.2-Linux-i386.tar.gz 
+- sudo mv cmake-3.0.2-Linux-i386  /opt
+- Add cmake to path
+
+- echo 'export PATH=$PATH:/opt/cmake-3.0.2-Linux-i386 >> ~/.bash_profile
+- source ~/.bash_profile
+
+### Eclipse Setup: Pull all plugins
+- Install Build Dependencies: 
+  - <code> $ apt-get -y install maven build-essential autoconf automake libtool cmake zlib1g-dev pkg-config libssl-dev </code>
+- Install git: 
+  - <code> $ sudo apt-get install git </code>
+- Install Maven Plugins from hadoop Project
+   - $ cd hadoop-maven-plugins
+   - $ mvn install
+ 
+### Install Eclipse
+
+http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/helios/R/eclipse-java-helios-linux-gtk-x86_64.tar.gz
+
+### Working Directory and Code
+
+- 
+- Download Code
+git clone git://git.apache.org/hadoop.git
+
+
+#### Moving Home Directory (Move to Linux Guide)
+sudo rsync -aXS --exclude='/*/.gvfs' /home/. /mnt/hadoop/myhome
+sudo diff -r /home /mnt/hadoop/myhome
+cd / && sudo mv /home /old_home && ln -s /mnt/hadoop/myhome /home
+
+Delete old home directory
+
+cd /
+sudo rm -r /old_home
+
+note:The --exclude='/*/.gvfs' prevents rsync from complaining about not being 
+able to copy .gvfs, but I believe it is optional. Even if rsync complains, 
+it will copy everything else anyway

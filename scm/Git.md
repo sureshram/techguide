@@ -43,3 +43,19 @@ git remote set-url origin newurl
 
 git reguest-pull [remote-repo-name-like-origin] https://github.com/sureshram/Project.git [branch-name-like-master]
 
+### Creating a branch
+
+#####start off in the apache trunk
+git checkout trunk
+#####create a new branch from trunk
+git branch HDFS-775
+#####switch to it
+git checkout HDFS-775
+#####show what's branch you are in
+git branch
+
+### Best Practices
+
+- The recommended process for working with Apache projects is: one branch per JIRA issue
+- git-bisect for finding the difference between branches/releases
+- git rebase
