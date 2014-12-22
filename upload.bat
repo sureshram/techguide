@@ -1,6 +1,7 @@
 @echo off
 
 set "comment=%~1"
+set project=techguide
 
 @if "%comment%" == "" goto usage
 
@@ -8,11 +9,11 @@ set "comment=%~1"
 
 git add .
 git commit -m "%comment%"
-git pull techguide master
-git push techguide master
+git pull %project% master
+git push %project% master
 echo "Upload completed"
 goto:eof
 
 :usage
-@echo "Upload <comments>"
+@echo "upload "comments""
 goto:eof
