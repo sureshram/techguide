@@ -44,6 +44,8 @@ git remote set-url origin newurl
 git reguest-pull [remote-repo-name-like-origin] https://github.com/sureshram/Project.git [branch-name-like-master]
 
 ### Creating a branch
+To create a branch and switch to it at the same time, you can run the git checkout command with the -b switch
+git checkout -b iss53
 
 #####start off in the apache trunk
 git checkout trunk

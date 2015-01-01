@@ -1,4 +1,15 @@
-### IP Table Setup
+
+### Optimization
+ - UDP Buffer Size (http://www.29west.com/docs/THPM/udp-buffer-sizing.html)
+
+ - TCP Sockets : Max TCP connections (61000 - 32768) / 60
+    [Details](http://stackoverflow.com/questions/410616/increasing-the-maximum-number-of-tcp-ip-connections-in-linux)
+
+   net.ipv4.ip_local_port_range = 32768 61000
+   net.ipv4.tcp_fin_timeout = 60
+
+
+### Firewall - IP Table Setup 
 
 http://www.howtogeek.com/177621/the-beginners-guide-to-iptables-the-linux-firewall/
 
@@ -57,8 +68,8 @@ Temp (Without Restarting)
 
 Permanent (After Reboot)
 
-
 cat /etc/sysconfig/network-scripts/ifcfg-eth0
+
 # Intel Corporation 82545EM Gigabit Ethernet Controller (Copper)
 DEVICE=eth0
 BOOTPROTO=none
@@ -89,35 +100,11 @@ hostname: displays hostname information
 netstat -s  for network errors
 traceroute - checking routing for the ip address
 
-Optimization
-UDP Buffer Size (http://www.29west.com/docs/THPM/udp-buffer-sizing.html)
-sysctl -a 
-Linux	net.core.rmem_max	131071
-Solaris	udp_max_buf	262144
-FreeBSD, Darwin	kern.ipc.maxsockbuf	262144
-AIX	sb_max	1048576
-Windows	None we know of	Seems to grant all reasonable requests
+
 
 
 
 uname: displays information about the operating system
-
-   uname [-amnrsv]
-
-   -a  Displays all information specified with the -m, -n, -r, -s, and -v
-       options.
-
-   -m  Displays the type of hardware running the system.
-
-   -n  Displays the name of the node (this may be a name that the system is
-       known by to a communications network).
-
-   -r  Displays the release number of the operating system.
-
-   -s  Displays the name of the implementation of the operating system.  (This
-       option is on by default.)
-
-   -v  Displays the operating system version.
 
 
 kill: sends a signal to a running process
@@ -134,65 +121,14 @@ kill: sends a signal to a running process
 ipcs: displays Interprocess Communication (IPC) facility status
 
    ipcs [-a|-bcopt] [-mqs]
-where
-  -a  Same as specifying the -b, -c, -o, -p, and -t options.
 
-  -b  Writes the maximum number of bytes in message queues, the size of seg-
-      ments for shared memory, and the number of semaphores in each semaphore
-      set.
-
-  -c  Writes the username and group name of the user that made the facility.
-
-  -m  Writes information about active shared memory segments.
-
-  -o  Writes the following usage information:
-        Number of messages on queue
-        Total number of bytes in message queues
-        Number of processes attached to shared memory segments
-
-  -p  Writes the Process number of last process to attach or detach on 
-      shared memory segments
-
-  -q  Writes information about active message queues.
-
-  -s  Writes information about active semaphore set.
-
-  -t  Writes the following:
-        Time of the last control operation that changed the access permis-
-        sions for all facilities
-        Time of the last msgsnd() and last msSOMv() on message queues
-        Time of the last semop() on semaphore sets
 
 ipcrm: removes message queue, semaphore set, or shared memory identifiers
 
   ipcrm [-m shared_memory] [-M shared_memory_key] [-q message_queue] [-Q
          message_key] [-s semaphore_ID] [-S semaphore_key]
 where:
-  -m shared_memory
-      Removes the shared memory identifier shared_memory. The shared memory
-      segment and data structure associated with shared_memory are also
-      removed after the last detach operation.
-
-  -M shared_memory_key 
-     Removes the shared memory identifier, created with key
-     shared_memory_key. The shared memory segment and data structure associ-
-     ated with it are also removed after the last detach.
-
-  -q message_queue
-      Removes the message queue identifier message_queue and the message
-      queue and data structure associated with it.
-
-  -Q message_key
-      Removes the message queue identifier, created with key message_key, and
-      the message queue and data structure associated with it.
-
-  -s semaphore_ID
-      Removes the semaphore identifier semaphore_ID and the set of semaphores
-      and data structure associated with it.
-
-  -S semaphore_key
-      Removes the semaphore identifier, created with key semaphore_key, and
-      the set of semaphores and data structure associated with it.
+  
 
 netstat: displays network statistics
 
@@ -244,6 +180,7 @@ arp:Displays and controls Address Resolution Protocol (ARP) tables
 	    $ arp -a
 
 lsof: list information about files opened by processes
+
 This is a complex command not available on all unix (you can obtain a copy from ftp://vic.cc.purdue.edu/pub/tools/lsof/).
 
   To list all open files, use:

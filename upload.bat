@@ -7,7 +7,7 @@ set project=techguide
 
 @echo Uploading with comments: %comment%
 
-git add .
+git add --all
 git commit -m "%comment%"
 git pull %project% master
 git push %project% master
@@ -15,5 +15,5 @@ echo "Upload completed"
 goto:eof
 
 :usage
-@echo "upload "comments""
+@echo "upload <comments in quotes>"
 goto:eof

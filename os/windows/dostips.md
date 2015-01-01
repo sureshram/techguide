@@ -1,8 +1,5 @@
-### DOS TIPS ###
-
-----------
-
-
+ DOS TIPS 
+==================
 
 #### DOS Window
 
@@ -35,6 +32,14 @@ if "%var1%" == "hello" ( echo "Hello" )
  set i=1
  set /a i=%i%+1
  echo %i%
+
+### Replace in a file - %1 is file to search and %2 is output filename - has a bug
+@echo off
+setlocal EnableDelayedExpansion
+for /f "tokens=*" %%a in (%1) do (
+ set LineFromLog=%%a
+ @echo !LineFromLog:"SYSTEMI_PATH"="D:/Software/logstash-1.4.2/logs/client*"! >> %2
+)
 
 
 #### String Replace
@@ -82,7 +87,7 @@ For /F %PARSEARG% %%i in (%CURRTIME%) Do Set HHMM=%%i%%j%%k
 netstat -aon > netstat%YYYYDDMM%%HHMM%
 
 
-####  Loops
+####  Wait Loops
 :loop
   echo "hello"
   timeout /t 1
