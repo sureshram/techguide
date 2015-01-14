@@ -61,3 +61,27 @@ git branch
 - The recommended process for working with Apache projects is: one branch per JIRA issue
 - git-bisect for finding the difference between branches/releases
 - git rebase
+
+
+#### Deleting files permanently from the repository
+
+Option 1
+https://help.github.com/articles/remove-sensitive-data/
+
+Option 2
+Download the tool - https://rtyley.github.io/bfg-repo-cleaner/
+
+Delete the files permanently
+java -jar .\bfg-1.12.0.jar --delete-files systemi_client.log
+
+
+View the change history <-p -2 last two changes>
+git log -p -2
+
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+
+On Windows - this works
+git reflog expire --expire=now --all; git gc --prune=now --aggressive
+
+# Push any changes to be committed
+git push
