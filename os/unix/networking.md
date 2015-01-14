@@ -13,7 +13,15 @@
 
 http://www.howtogeek.com/177621/the-beginners-guide-to-iptables-the-linux-firewall/
 
+Note: each packet is are processed in the order in the iptables
+iptables-save to display the iptable information 
+
 iptables -L -v
+
+ -- To allow port incoming connection to 5500 (new) and respond (established) 
+iptables -A INPUT -p tcp --dport 5500 -s 172.26.2.30 -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -p tcp --sport 5500 -d 172.26.2.30 -m state --state ESTABLISHED -j ACCEPT
+
 
 Accept connections
 

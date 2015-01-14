@@ -67,17 +67,20 @@ wget http://www.cmake.org/files/v3.0/cmake-3.0.2-Linux-i386.tar.gz
   - <code> $ sudo apt-get install git </code>
 - Install Maven Plugins from hadoop Project
    - $ cd hadoop-maven-plugins
-   - $ mvn install
- 
-### Install Eclipse
-
-http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/helios/R/eclipse-java-helios-linux-gtk-x86_64.tar.gz
+   - $ mvn install 
+- Download Eclipse
+  - [Click to Download](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/helios/R/eclipse-java-helios-linux-gtk-x86_64.tar.gz)
+- [Setup Envronment](http://wiki.apache.org/hadoop/EclipseEnvironment)
 
 ### Working Directory and Code
 
-- 
 - Download Code
 git clone git://git.apache.org/hadoop.git
 
 - Build the code
 mvn package -Pdist -DskipTests -Dtar
+
+
+### Run Hadoop
+
+- http://wiki.apache.org/hadoop/GettingStartedWithHadoop
