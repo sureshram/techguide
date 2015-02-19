@@ -1,0 +1,3 @@
+msconfig - boot up options
+mstsc - remote desktop
+eventvwr.exe - event viewer

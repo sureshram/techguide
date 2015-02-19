@@ -83,5 +83,10 @@ git reflog expire --expire=now --all && git gc --prune=now --aggressive
 On Windows - this works
 git reflog expire --expire=now --all; git gc --prune=now --aggressive
 
-# Push any changes to be committed
+#### Push any changes to be committed
 git push
+
+
+#### Push branch changes
+git push origin elkstack1.3.4_1.4.2_3.0:master
+

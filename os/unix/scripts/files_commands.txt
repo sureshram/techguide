@@ -1,0 +1,27 @@
+### To find open files including process information
+lsof | grep elasticsearch
+
+### Line count File
+number of line count: wc -l file
+
+### Copy
+cp - copy files
+scp
+pscp -pw password user@ip:/home/restofpath
+
+### Sync Files
+rsync user@host:/dir  dest
+rsync source user@host:/dir
+
+### Remove File
+rm -fr tmp/* 
+ls -t - Sort files by date
+
+### Search
+find path - search files
+
+### Permissions
+chmod - change read/write access
+
+### Spliting Files
+split -b100m fileToSplit  - Splits files into 100 Meg each

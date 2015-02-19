@@ -1,7 +1,7 @@
 @echo off
 
 set "comment=%~1"
-set project=techguide
+set project=origin
 
 @if "%comment%" == "" goto usage
 

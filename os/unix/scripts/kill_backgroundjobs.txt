@@ -1,0 +1,2 @@
+jobs
+fg <jobnumber printed above>

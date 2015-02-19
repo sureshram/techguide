@@ -107,13 +107,23 @@ hostname: displays hostname information
 /proc/net/dev - for transport errors
 netstat -s  for network errors
 traceroute - checking routing for the ip address
-
-
-
-
-
 uname: displays information about the operating system
 
+
+#### Virtual Machine Network Fix - After Cloning
+[Link](http://community.spiceworks.com/how_to/show/67673-device-eth0-does-not-seem-to-be-present-after-moving-or-cloning-a-rhel-centos-6-3-virtual-machine-in-vsphere)
+
+1) Edit vi /etc/udev/rules.d/70-persistent-net.rule
+The problem arises when CentOS/RHEL 6.4 tries to remember the existing NIC of the virtual machine. But in case of moving or cloning VSphere changes the MAC address. Accordingly linux OS changes the device name from eth0 to eth1 and so on after finding a new MAC address. Backup your old files. You need to change and delete the old "SUBSYSTEM" entries (in case are not being used) and rename eth1 to etho in the file /etc/udev/rules.d/70-persistent-net.rule accordingly to reflect the changes. After completing you also need to change /etc/sysconfig/network-scripts/ifcfg-eth0 to change MAC and name of the eth0.
+
+2) vi /etc/sysconfig/network-scripts/ifcfg-eth0
+change the MAC address of eth0 which is same in Subsystem udev rules file "vi /etc/udev/rules.d/70-persistent-net.rule".
+
+3) start_udev
+
+4) service network restart
+
+### Useful commands
 
 kill: sends a signal to a running process
 

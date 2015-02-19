@@ -1,0 +1,3 @@
+#robocopy included in windows 7
+robocopy /MIR /Z /B /R:0 C:\ssh E:\s607109nj3sw04\C-Drive\ssh
+robocopy /MIR /Z /B /R:0 C:\ssh-OLD E:\s607109nj3sw04\C-Drive\ssh-OLD

@@ -1,0 +1,20 @@
+REM save this in a file customer_env_netstat.bat
+
+Set CURRDATE=%TEMP%\\CURRDATE.TMP
+Set CURRTIME=%TEMP%\\CURRTIME.TMP
+
+
+
+DATE /T > %CURRDATE%
+TIME /T > %CURRTIME%
+
+Set PARSEARG="eol=; tokens=1,2,3,4* delims=/, "
+For /F %PARSEARG% %%i in (%CURRDATE%) Do SET YYYYDDMM=%%l%%j%%k
+
+Set PARSEARG="eol=; tokens=1,2,3* delims=:, "
+For /F %PARSEARG% %%i in (%CURRTIME%) Do Set HHMM=%%i%%j%%k
+
+:loop
+  netstat -aon >>  customer_env_netstat_%YYYYDDMM%%HHMM%
+  timeout /t 5
+goto loop

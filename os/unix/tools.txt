@@ -1,0 +1,4 @@
+Manages processes under one parent
+http://supervisord.org/running.html
+
+IDEA: multi process tasks runs within it's own space memory, cpu

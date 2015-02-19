@@ -1,0 +1,26 @@
+@echo off
+@rem
+
+set customer=%1
+set env=%2
+set destination=%3
+
+@rem If input arguments are empty then specify usage
+if "%1" == "" goto usage
+if "%2" == "" goto usage
+if "%3" == "" goto usage
+
+@rem capture the command history
+echo %0 %1 %2 %3 >> history.txt
+
+@rem overwrite without prompt
+copy /-Y logstash\bin\%customer%_%env%.conf %destination%
+copy /-Y logstash\bin\%customer%_%env%.bat %destination%
+
+pause & goto:eof
+
+:usage
+echo. Copies configuration file
+echo. Usage: deploy.bat <Customer> <Env.. uat/prod> <LogStash Path>
+echo. Example: deploy.bat test test "D:\Software\logstash-1.4.2\bin"
+goto:eof

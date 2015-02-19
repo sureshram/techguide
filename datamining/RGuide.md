@@ -74,3 +74,33 @@ If the length of the shorter vector does not divide evenly
 | something fishy might be going on
 
 
+### Twitter Anomaly detection
+
+install.packages("devtools")
+devtools::install_github("twitter/AnomalyDetection")
+help(AnomalyDetectionTs)
+??AnomalyDetectionTs
+library(AnomalyDetection)
+help(AnomalyDetectionTs)
+data(raw_data)
+res = AnomalyDetectionTs(raw_data, max_anoms=0.02, direction='both', plot=TRUE)
+res$plot
+raw_data
+AnomalyDetectionVec(raw_data[,2], max_anoms=0.02, period=1440, direction='both', only_last=FALSE, plot=TRUE)
+res = AnomalyDetectionTs(raw_data, max_anoms=0.02, direction='both', plot=TRUE)
+
+
+======================
+
+install.packages("devtools")
+devtools::install_github("twitter/AnomalyDetection")
+help(AnomalyDetectionTs)
+??AnomalyDetectionTs
+library(AnomalyDetection)
+help(AnomalyDetectionTs)
+data(raw_data)
+res = AnomalyDetectionTs(raw_data, max_anoms=0.02, direction='both', plot=TRUE)
+res$plot
+raw_data
+AnomalyDetectionVec(raw_data[,2], max_anoms=0.02, period=1440, direction='both', only_last=FALSE, plot=TRUE)
+res = AnomalyDetectionTs(raw_data, max_anoms=0.02, direction='both', plot=TRUE)

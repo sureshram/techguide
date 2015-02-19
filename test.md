@@ -1,0 +1,39 @@
+D:\PrivateWorkspace\techguide\gen_readme.bat
+D:\PrivateWorkspace\techguide\git_commit.bat
+D:\PrivateWorkspace\techguide\log management
+D:\PrivateWorkspace\techguide\os
+D:\PrivateWorkspace\techguide\programming
+D:\PrivateWorkspace\techguide\README.md
+D:\PrivateWorkspace\techguide\scm
+D:\PrivateWorkspace\techguide\test.md
+D:\PrivateWorkspace\techguide\virtualization
+D:\PrivateWorkspace\techguide\blogs\goodreads.txt
+D:\PrivateWorkspace\techguide\comparison\DatabasesSQL_NoSQL.md
+D:\PrivateWorkspace\techguide\datamining\hadoop_install.md
+D:\PrivateWorkspace\techguide\datamining\RGuide.md
+D:\PrivateWorkspace\techguide\designandarchitecture\Queues.txt
+D:\PrivateWorkspace\techguide\designandarchitecture\softwaredevelopment.md
+D:\PrivateWorkspace\techguide\log management\LogManagement.html
+D:\PrivateWorkspace\techguide\log management\LogManagement.md
+D:\PrivateWorkspace\techguide\os\unix
+D:\PrivateWorkspace\techguide\os\windows
+D:\PrivateWorkspace\techguide\os\unix\networking.md
+D:\PrivateWorkspace\techguide\os\unix\scripts
+D:\PrivateWorkspace\techguide\os\unix\tools.txt
+D:\PrivateWorkspace\techguide\os\unix\scripts\apache_log_analysis_hourly.sh
+D:\PrivateWorkspace\techguide\os\unix\scripts\elk_controller.sh
+D:\PrivateWorkspace\techguide\os\unix\scripts\filesystem.sh
+D:\PrivateWorkspace\techguide\os\unix\scripts\files_commands.txt
+D:\PrivateWorkspace\techguide\os\unix\scripts\movedirto_partition.sh
+D:\PrivateWorkspace\techguide\os\unix\scripts\rpm_commands.sh
+D:\PrivateWorkspace\techguide\os\windows\aodot0.gif
+D:\PrivateWorkspace\techguide\os\windows\aoicon0.gif
+D:\PrivateWorkspace\techguide\os\windows\dostips.md
+D:\PrivateWorkspace\techguide\os\windows\LogManagement.htm
+D:\PrivateWorkspace\techguide\os\windows\scripts
+D:\PrivateWorkspace\techguide\os\windows\scripts\arguments.txt
+D:\PrivateWorkspace\techguide\programming\scala
+D:\PrivateWorkspace\techguide\programming\scala\References.md
+D:\PrivateWorkspace\techguide\scm\Git.md
+D:\PrivateWorkspace\techguide\virtualization\DockerVMs.md
+D:\PrivateWorkspace\techguide\virtualization\VM_AddDisk.md

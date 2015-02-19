@@ -1,0 +1,5 @@
+set IP = $1
+set DIR = $2
+set USER = $3
+
+PSCP.EXE d:\temp\apache_logs.zip %USER%@%IP%:$DIR 
