@@ -1,2 +1,8 @@
 KDD Cup
 www.signkdd.org/kddcup/index.php
+
+OpenIDEO
+
+http://www2.cs.uregina.ca/~dbd/cs831/notes/itemsets/datasets.php
+
+

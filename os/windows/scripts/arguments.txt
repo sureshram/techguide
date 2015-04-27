@@ -1,6 +1,7 @@
 @echo off
 @rem
 
+@rem make sure no space between =
 set customer=%1
 set env=%2
 set destination=%3

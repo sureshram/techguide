@@ -1,2 +1,0 @@
-# -i - inplace, -e <script to  like replace>
-sed -i -b -e "s/key/value/g" file

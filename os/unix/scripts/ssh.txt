@@ -1,0 +1,22 @@
+C:\Users\suresh.r\.ssh
+D:\Software\Cygwin\home\suresh.r\.ssh
+
+# SSH to VM via nat port (NAT networking is setup on the VM)
+ssh -p 2222 sureshr@localhost
+
+# Generate Public Key
+ssh-keygen -t rsa
+
+# Copy public key to the server 
+# SCP via alternate port
+scp -P 2222 /home/suresh.r/.ssh/id_rsa.pub sureshr@localhost:/home/sureshr
+
+# Login to remote machine and move the file to authorized keys
+# Create directory if doesn't exist(-p including parent)
+mkdir -p ~/.ssh
+cat id_rsa.pub >> ~/.ssh/authorized_keys
+
+# Disable password for root
+sudo nano /etc/ssh/sshd_config
+# Manual Change: PermitRootLogin without-password
+reload ssh

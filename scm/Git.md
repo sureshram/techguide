@@ -1,9 +1,9 @@
 # Git Guide
+http://gitref.org
+http://git-scm.com
 
 ### Local Configuration settings on your machine
-
 git config -l
-
 
 ###  Create new Project
 
@@ -18,9 +18,13 @@ git init
 newproject>notepad README.txt
 newproject>git add . 
 
+git pull vs git fetch
+
+git fetch will only fetch the files from remote but will not modify your current working branch
+git pull will fetch the files and merge to your branch
+
 
 ###  Commit new file to local repo
-
 newproject>git commmit -m 'New Project Setup - README.txt'
 
 ### Display Remote Repositories
@@ -32,7 +36,6 @@ git add remote techguide git@github.com:sureshram/techguide.git
 
 
 ### Push changes to remote repo
-
 git push techguide master
 
 ###  Change remote url to different remote
@@ -40,10 +43,12 @@ git remote set-url origin newurl
 
 
 ### Pull request
-
 git reguest-pull [remote-repo-name-like-origin] https://github.com/sureshram/Project.git [branch-name-like-master]
 
-### Creating a branch
+
+
+## Branching
+
 To create a branch and switch to it at the same time, you can run the git checkout command with the -b switch
 git checkout -b iss53
 
@@ -55,8 +60,20 @@ git branch HDFS-775
 git checkout HDFS-775
 #####show what's branch you are in
 git branch
+#### List all branches
+git brnach -a
+git remote show origin
+### List tracking branches
+git branch -vv
+#### Checkout remote branch through tracking
+git checkout -b 1.5 origin/1.5
+git checkout --track origin/1.5
+Note: this creates a local banch 1.5 tracking the remote branch origin/1.5
+####  Pull remote branch after checkout tracking
+git fetch
 
-### Best Practices
+
+## Best Practices
 
 - The recommended process for working with Apache projects is: one branch per JIRA issue
 - git-bisect for finding the difference between branches/releases

@@ -1,0 +1,5 @@
+#store names with comma separated  
+#Example test.txt: hello world,how are  
+
+grep "," test.txt | awk '{split($0, array, ",")} END {for (a in array) print array[a]}' | uniq -c | wc -l
+

@@ -1,0 +1,12 @@
+# -i - inplace, -e <script to  like replace>
+sed -i -b -e "s/key/value/g" file
+
+# Remove Double Quoted String
+>> echo "abc \"do not process = this\" def=10 \"do not process this = either\"" | sed 's/"[^"]*"//g'
+
+#Prints 
+# abc def=10
+
+#This command will replace the text within double quotes with empty space and eliminates it
+sed 's/"[^"]*"//g'
+

@@ -1,0 +1,24 @@
+Example 1 : DOESNT WORK 
+set shome=.
+set dist_url=http://csa-net.dk/salt/dist/win-amd64
+set logfile=bootstrap.log
+set distsetup=distribute_setup.py
+
+
+call:logexec cmd.exe /c PowerShell (New-Object System.Net.WebClient).DownloadFile('%dist_url%/%distsetup%','%shome%\download\%distsetup%');
+
+goto :EOF
+
+:logexec
+SET _pcmd=%*
+echo %date% %time% - Executing: %_pcmd% >> %logfile%
+%_pcmd% >> %logfile% 2>&1
+echo %date% %time% - ReturnCode: %ErrorLevel% >> %logfile%
+goto :EOF
+
+:log
+echo %date% %time% - Status: %* >> %logfile%
+goto: EOF
+
+:EOF
+

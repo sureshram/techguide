@@ -1,0 +1,8 @@
+reboot
+press esc or shift while rebooting 
+choose recovery kernel (most recent)
+passwd username to change the pwd
+If you get "Authentication token manipulation error"
+sometimes it doesnt mount the / so manually mount it: mount -rw -o remount /
+try again	
+

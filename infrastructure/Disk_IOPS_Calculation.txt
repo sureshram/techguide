@@ -1,0 +1,24 @@
+http://www.techrepublic.com/blog/the-enterprise-cloud/calculate-iops-in-a-storage-array/
+http://www.thecloudcalculator.com/calculators/disk-raid-and-iops.html
+http://www.anandtech.com/show/5729/western-digital-velociraptor-1tb-wd1000dhtz-review/2
+
+1000 Writes/Sec
+70%  Write
+30%  Read
+
+10K RPM 140 IOPS
+7,200 RPM - 75 IOPS
+
+10K RPM
+RAID 0 = 1000/140 = 8 Disks Array 
+RAID 5 (Write Penalty) = (1000 * .7 * 4) + (1000 * .3 * 1)/140 = 22 Disks Array 
+
+
+7,200K RPM
+RAID 0 = 1000/75 = 13 Disk Array 
+RAID 5 (Write Penalty) = (1000 * .7 * 4) + (1000 * .3 * 1)/75 =  41 Disks Array
+	
+
+
+10 MB Per Second/120K Block Size - (Event Size of 1KB then 10 MB Data Write has 1000 events max)
+Max Disk Transfers - 1000/Second

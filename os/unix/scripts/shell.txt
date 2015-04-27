@@ -1,0 +1,24 @@
+#Arguments
+# http://www.inmotionhosting.com/support/website/server-usage/view-level-of-traffic-with-apache-access-log
+# file://D:\PrivateWorkspace\techguide\os\unix\scripts
+# 
+#!/bin/csh -f
+
+echo The $0 command is called $#argv
+echo log file: $1
+grep "2014:09" $1 | wc -l
+
+
+#Example test.sh 1
+!bin/csh
+echo $0
+
+#Date in Scripts : http://www.linuxjournal.com/article/1299
+#Get Date for FILE
+TODAY=$(date +%Y%m%d)
+
+
+## if condition
+then :
+else
+fi

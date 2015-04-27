@@ -1,1 +1,3 @@
 netstat -ano
+
+netstat -ao | findstr 1100  - to see who is using the ports

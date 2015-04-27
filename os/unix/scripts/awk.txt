@@ -1,0 +1,7 @@
+-- Extract field using space delimitor using cut/awk
+cut -d' ' -f 7,8,9,10,11
+awk -F" " '{print $1}'
+
+
+#extract numbers and pipe to sum 
+awk '{s+=$1} END {print s}' 

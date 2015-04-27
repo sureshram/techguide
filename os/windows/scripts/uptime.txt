@@ -1,0 +1,26 @@
+System Up Time
+The following steps describes how to find these events and their time and date:
+
+Right-click on a My Computer icon and select Manage from the context menu. The Computer Management console should appear within seconds.
+From the left pane, expand the System Tools node (if it is not already expanded), then expand the Event Viewer node.
+Under the Event Viewer node, select System. The right pane should display the entire System log. This log is probably vast and you probably don’t like scrolling through it to find what you need. You need to filter the log to see only what you need.
+From the View menu, select Filter… System Properties dialog box should pop up.
+From the “Event source” drop-down list, select “eventlog“.
+Click OK. System Properties dialog box should disappear and the right pane of Computer Management console should show only what we need: Event Log service’s start and stop events.
+Look at the numbers in Event column. 6006 represents a stop (corresponding to a system shutdown.) 6005 and 6009 represent a start (corresponding to a system startup.) Then look at the Date and Time column of each entry to find out when they happened.
+
+
+Information	6/14/2013 3:12:00 PM	EventLog	6005	None
+Information	1/30/2012 5:56:46 PM	EventLog	6005	None
+Information	2/22/2011 11:50:41 AM	EventLog	6005	None
+Information	3/21/2011 1:18:15 AM	EventLog	6005	None
+Information	8/20/2011 8:26:37 PM	EventLog	6005	None
+Information	8/20/2011 8:11:10 PM	EventLog	6005	None
+
+
+Information	6/14/2013 3:08:41 PM	EventLog	6006	None
+Information	1/30/2012 5:53:43 PM	EventLog	6006	None
+Information	3/21/2011 1:07:38 AM	EventLog	6006	None
+Information	8/20/2011 8:16:40 PM	EventLog	6006	None
+Information	8/20/2011 7:33:06 PM	EventLog	6006	None
+

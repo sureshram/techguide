@@ -1,3 +1,25 @@
 msconfig - boot up options
 mstsc - remote desktop
 eventvwr.exe - event viewer
+
+winver
+
+wmic
+
+@rem Bootup Time or Last Reboot, Last Restart
+systeminfo | find "System Boot Time"
+
+@rem Hotfix Patches
+wmic qfe list full /format:htable > hotfixes.htm
+
+@rem Windows 7 
+@rem SFC Tools checks for corrupted file
+@rem http://support.microsoft.com/kb/929833
+sfc /scannow  - checks the sytem for any issues - can be run when the windows is unstable due to weired state
+
+
+net start/stop
+tskkill /F
+diskperf - to turn on disk performance usage
+PerMon or SysMon 
+tracert - tracing route

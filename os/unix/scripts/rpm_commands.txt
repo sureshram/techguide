@@ -14,3 +14,12 @@ rpm -e <package name>
 
 ### Repo List
 yum repolist
+
+### List files in the RPM 
+rpm -q -filesbypkg -p filename.rpm 
+
+### RPM Information without installing
+rpm -qpil file.rpm
+
+
+
