@@ -7,5 +7,6 @@
 useradd -c "central log management test server" -m -p logcentral -U logcentral
 
 
-Add user to an existing group
+Add user to ansudo group
+usermod  -aG sudo devops
 
