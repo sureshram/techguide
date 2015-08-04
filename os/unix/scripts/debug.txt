@@ -34,7 +34,7 @@ iostat
 strace -f -tt  -s1000 -p <replace pid>  -c
 
 
-#### Network
+#### Network (see also ports.txt for port check)
 # Test whether the network port is open and connectable
 # -z      Specifies that nc should just scan for listening daemons, without sending any data to them.
  nc -z localhost 9200
@@ -44,7 +44,12 @@ strace -f -tt  -s1000 -p <replace pid>  -c
 # -vv - very verbose
 # -i - interface - any
 tcpdump  host 127.0.0.1  and port 4505   -s 0   -i any -vv
- 
+
+#### Netstat to check open ports, connection waiting etc
+# Orphan Connections
+netstat -an | grep FIN 
+# Open Ports
+netstat -aon | grep 5500
 
 # Other Cool Debugging Tools
 http://jvns.ca/blog/2015/03/15/nancy-drew-and-the-case-of-the-slow-program/

@@ -29,6 +29,7 @@ newproject>git commmit -m 'New Project Setup - README.txt'
 
 ### Display Remote Repositories
 http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
+http://git-scm.com/docs/git-remote
 
 git remote -v
 

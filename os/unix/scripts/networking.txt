@@ -1,54 +1,49 @@
-
-
-### Firewall - IP Table Setup 
-
-http://www.howtogeek.com/177621/the-beginners-guide-to-iptables-the-linux-firewall/
-
-Note: each packet is are processed in the order in the iptables
-iptables-save to display the iptable information 
-
-iptables -L -v
-
- -- To allow port incoming connection to 5500 (new) and respond (established) 
-iptables -A INPUT -p tcp --dport 5500 -s 172.26.2.30 -m state --state NEW,ESTABLISHED -j ACCEPT
-iptables -A OUTPUT -p tcp --sport 5500 -d 172.26.2.30 -m state --state ESTABLISHED -j ACCEPT
-
-
-Accept connections
-
-iptables --policy INPUT ACCEPT
-iptables --policy OUTPUT ACCEPT
-iptables --policy FORWARD ACCEPT
-
-Drop connections
-
-iptables --policy INPUT DROP
-iptables --policy OUTPUT DROP
-iptables --policy FORWARD DROP
+ Display Address
+ /sbin/ifconfig | grep -i hwaddr
 
 ### Static IP
 
 http://hsukumar.wordpress.com/2008/04/15/static-ip-address-on-unix-and-redhat-machine/
 
-Temp (Without Restarting)
+## Backup
+cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0.bak
 
-# ifconfig eth0 143.229.xxx.yyy netmask 255.255.255.0
+## Update the file with
 
-# ifconfig eth0 broadcast 143.229.xxx.255
-
-Permanent (After Reboot)
-
-cat /etc/sysconfig/network-scripts/ifcfg-eth0
-
-# Intel Corporation 82545EM Gigabit Ethernet Controller (Copper)
-DEVICE=eth0
+NM_CONTROLLED="no"
 BOOTPROTO=none
-ONBOOT=yes
-HWADDR=00:0c:29:66:3a:26
+DEFROUTE=yes
+PEERDNS=no
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=yes
+
+## Add IPv4 Address
+
 NETMASK=255.255.255.0
 IPADDR=10.0.100.125
 GATEWAY=10.0.100.1
-TYPE=Ethernet
+
+## Edit and Set the Gateway where it connects to the outside world (router)
+vi /etc/sysconfig/network
+GATEWAY=XXX.XXX.XXX.XXX
+
+
+## DNS Settings for domain name resolution these are in the /etc/resolve.conf
+PEERDNS=yes
+DNS1=XXX.XXX.XXX.XXX
+DNS2=XXX.XXX.XXX.XXX
+DOMAIN=your_domain.com
+
+
+
+
+Temp (Without Restarting)
+# ifconfig eth0 143.229.xxx.yyy netmask 255.255.255.0
+# ifconfig eth0 broadcast 143.229.xxx.255
+Permanent (After Reboot)
+cat /etc/sysconfig/network-scripts/ifcfg-eth0
+
+
 
 and type the following command
 
@@ -188,43 +183,7 @@ This is a complex command not available on all unix (you can obtain a copy from 
   address, use:
        lsof -i@128.210.15.17
 
-iostat: display I/O statistics
 
-  iostat [drive...] [interval] [count]
-For example
-  iostat 1 5
-displays 5 status reports taken at 1 second intervals.
-
-vmstat: displays virtual memory statistics
-
-  vmstat interval [count]
-  vmstat [-f|-M|-P|-s]
-where:
-  -f  Displays only statistics about the number of forks since system startup
-      (see the fork() call).
-  -P  Displays accumulated statistics about physical memory use.
-  -s  Displays accumulated statistics along with the page size.
-
-strings: Finds strings in an ASCII or binary file.
-
-   strings [-ao] [-n number] [file...]
-   -a Searches an entire object file, rather than just the initialized data
-      space.
-
-   -n number
-      Sets the minimum string length to number rather than the default of 4.
-
-   -o Precedes each string by its offset (in octal) in the file.
-
-df: Displays statistics on free disk space
-
-du:Displays a summary of disk usage
-
-   To display the disk usage of a directory tree and each of its sub-trees, enter:
-$ du /u/fran
-
-   To display the disk usage of each file, enter:
-          $ du -a /u/fran
    
    To display only the total disk usage of a directory tree, enter:
           $ du -rs /u/fran

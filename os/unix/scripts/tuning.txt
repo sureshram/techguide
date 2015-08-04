@@ -7,3 +7,6 @@
    net.ipv4.ip_local_port_range = 32768 61000
    net.ipv4.tcp_fin_timeout = 60
 
+# Terminate orphan connections   
+cat /proc/sys/net/ipv4/tcp_max_orphans
+echo 0 > /proc/sys/net/ipv4/tcp_max_orphans

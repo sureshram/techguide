@@ -20,8 +20,9 @@ ls -t - Sort files by date
 ### Search
 find path - search files
 
-### Permissions
-chmod - change read/write access
-
 ### Spliting Files
 split -b100m fileToSplit  - Splits files into 100 Meg each
+
+
+
+

@@ -1,0 +1,2 @@
+# Start, Stop Service
+PsService.exe \\172.26.2.32 start "MetricStream Logcentral Shipper"

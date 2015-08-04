@@ -1,0 +1,37 @@
+iostat: display I/O statistics
+
+  iostat [drive...] [interval] [count]
+For example
+  iostat 1 5
+displays 5 status reports taken at 1 second intervals.
+
+vmstat: displays virtual memory statistics
+
+  vmstat interval [count]
+  vmstat [-f|-M|-P|-s]
+where:
+  -f  Displays only statistics about the number of forks since system startup
+      (see the fork() call).
+  -P  Displays accumulated statistics about physical memory use.
+  -s  Displays accumulated statistics along with the page size.
+
+strings: Finds strings in an ASCII or binary file.
+
+   strings [-ao] [-n number] [file...]
+   -a Searches an entire object file, rather than just the initialized data
+      space.
+
+   -n number
+      Sets the minimum string length to number rather than the default of 4.
+
+   -o Precedes each string by its offset (in octal) in the file.
+
+df: Displays statistics on free disk space
+
+du:Displays a summary of disk usage
+
+   To display the disk usage of a directory tree and each of its sub-trees, enter:
+$ du /u/fran
+
+   To display the disk usage of each file, enter:
+          $ du -a /u/fran

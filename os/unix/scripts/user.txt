@@ -1,0 +1,11 @@
+## Author : Suresh Ramakrishnaiah - All scripts works with CentOS/RedHat Linux versions unless specified
+
+/etc/password - password file
+/etc/shadow - encrypted password
+
+# comment, create home dir, password, create group same as username
+useradd -c "central log management test server" -m -p logcentral -U logcentral
+
+
+Add user to an existing group
+

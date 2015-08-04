@@ -1,0 +1,8 @@
+telnet ip port
+
+netstat
+
+nc -v -z salt.master.ip 4505
+nc -v -z salt.master.ip 4506
+
+nmap -sS -q -p 4505-4506 salt.master.ip.addr

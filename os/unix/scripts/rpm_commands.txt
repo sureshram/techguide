@@ -1,5 +1,8 @@
 # http://wiki.centos.org/TipsAndTricks/YumAndRPM
 
+## List Installed Packages
+yum list > pkgs.txt
+
 ###Installing from RPM from local
 rpm -Uvh rpmname
 
@@ -11,6 +14,8 @@ rpm -qa | grep -i <package name>
 
 ### Uninstall  
 rpm -e <package name>
+
+
 
 ### Repo List
 yum repolist
