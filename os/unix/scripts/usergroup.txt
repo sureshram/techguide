@@ -1,0 +1,8 @@
+egrep '^root|^logcentral' /etc/shadow
+vigr  to modify /etc/group and can add users to add group
+Ctrl-D to logout
+
+visudo to edit sudoers file
+
+Notes:
+userdel doesn't remove the user directory

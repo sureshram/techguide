@@ -105,20 +105,8 @@ ipcrm: removes message queue, semaphore set, or shared memory identifiers
 where:
   
 
-netstat: displays network statistics
-
-  To produce the default display for network connections, enter:
-            netstat
-
-  To show the state of the configured interfaces, enter:
-            $ netstat -i
-
-   To show the routing tables, enter:
-            $ netstat -r
-
-   To show the routing tables with network addresses, enter:
-            $ netstat -rn
-
+			
+			
 
 ifconfig: configures or displays network interface parameters
 

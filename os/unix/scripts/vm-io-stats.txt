@@ -1,6 +1,7 @@
 iostat: display I/O statistics
 
   iostat [drive...] [interval] [count]
+  
 For example
   iostat 1 5
 displays 5 status reports taken at 1 second intervals.

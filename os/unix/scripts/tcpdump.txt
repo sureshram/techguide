@@ -1,5 +1,9 @@
 ### TCP Dump
 
+QuickHelp:  http://danielmiessler.com/study/tcpdump/
+Manual:  http://www.tcpdump.org/manpages/tcpdump.1.html
+
+#### Reference
 tcpdump -n -X
 
 n - names not resolved, ip address only
@@ -15,15 +19,12 @@ s - numbe of bytes to capture, default 96, 0 - everything
 S - display sequence number absolute not relative
 
 
-Reference :
 
-QuickHelp:  http://danielmiessler.com/study/tcpdump/
-Manual:  http://www.tcpdump.org/manpages/tcpdump.1.html
-
-Capture the dump
+Examples:
 
 tcpdump host localhost > dat & tail -f dat
-
 ‘tcpdump  -l  |  tee dat’’ or ‘‘tcpdump  -l   > dat  &  tail  -f  dat
 
 
+# Verbose by Port
+tcpdump -nnvvXS port 5500

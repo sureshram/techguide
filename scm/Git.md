@@ -74,6 +74,19 @@ Note: this creates a local banch 1.5 tracking the remote branch origin/1.5
 git fetch
 
 
+
+## Merging the changes from branch (multitable_15) to master
+
+# Fetch latest head
+git fetch origin 
+# Change to branch and check out the branch code
+git checkout -b multitable_15  origin/multitable_15
+
+#Merging to master and checkin 
+git checkout master  # Checkout the master and switch to it
+git merge --no-ff multitable_15  #merge branch changes to head
+git push origin master  # push new head to master
+
 ## Best Practices
 
 - The recommended process for working with Apache projects is: one branch per JIRA issue

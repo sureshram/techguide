@@ -1,6 +1,19 @@
 http://www.techrepublic.com/blog/the-enterprise-cloud/calculate-iops-in-a-storage-array/
 http://www.thecloudcalculator.com/calculators/disk-raid-and-iops.html
 http://www.anandtech.com/show/5729/western-digital-velociraptor-1tb-wd1000dhtz-review/2
+http://www.violin-memory.com/blog/understanding-io-random-vs-sequential/
+
+What is IOPS?
+
+ IOPS stands for I/Os Per Second and indicates the number of distinct Input/Output operations (i.e. reads or writes) 
+ that can take place within one second
+
+
+For Flash sequential or random io doesn't apply
+
+RPM - Revolutions Per Minute
+15K - 15000/60 = 250/second = 1 per 4 milliseconds
+10K - 
 
 1000 Writes/Sec
 70%  Write

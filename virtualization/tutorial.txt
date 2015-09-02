@@ -1,9 +1,0 @@
-run docker in the background
-sudo docker run -d -P repo:tag
-
- 
-sudo docker run -d -P --name kafka dockerfile/java:oracle-java7 /bin/bash
-
- -i interactive
- -d flag which tells Docker to run the container in the background. 
-The -P flag is new and tells Docker to map any required network ports inside our container to our host. 
